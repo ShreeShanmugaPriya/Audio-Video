@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background YouTube Video</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -2;
+        }
+
+        .video-background iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 177.78vh;
+            height: 100vh;
+            min-width: 100vw;
+            min-height: 56.25vw;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 30px 0 20px;
+            font-size: clamp(2rem, 4vw, 4rem);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        audio, video {
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+
+        .section {
+            background: rgba(0, 0, 0, 0.45);
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+
+        .note {
+            margin-top: 20px;
+            color: #c9e8ff;
+            font-size: 0.95rem;
+        }
+
+        a {
+            color: #8ad4ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <iframe
+            src="https://www.youtube.com/embed/S14BZYh3bKI?autoplay=1&mute=1&controls=0&loop=1&playlist=S14BZYh3bKI&rel=0&modestbranding=1"
+            title="YouTube background video"
+            frameborder="0"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div class="section">
+            <h1>Audio</h1>
+            <audio controls>
+                <source src="MyAudio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="section">
+            <h1>Local Video</h1>
+            <video width="560" height="315" controls>
+                <source src="MyVideo.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </div>
+
+        <div class="section">
+            <h1>YouTube Background Video</h1>
+            <p class="note">This page uses the YouTube short as the full-page background video. If it does not play, open this page through a local server instead of using <code>file://</code>.</p>
+            <p class="note">Direct YouTube watch link: <a href="https://www.youtube.com/shorts/S14BZYh3bKI" target="_blank" rel="noreferrer noopener">https://www.youtube.com/shorts/S14BZYh3bKI</a></p>
+        </div>
+    </div>
+</body>
+</html>

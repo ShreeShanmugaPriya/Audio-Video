@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+</head>
+<body>
+    <h1 align="center" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Audio</h1>
+    <audio controls>
+        <source src="MyAudio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <h1 align="center" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Local Video</h1>
+        <video width="320" height="240" controls>
+            <source src="MyVideo.mp4" type="video/mp4">
+        </video>
+    <h1 align="center" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">YouTube Video</h1>
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+    <style>
+        audio, video, iframe {
+            display: block;
+            margin: 20px auto;
+        }    
+        body{
+            background-image: url('img.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</body>
+</html>
